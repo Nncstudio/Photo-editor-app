@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/adContainerViewContainer"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/black"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/iv_back_my_photos"
+                android:layout_width="?android:attr/actionBarSize"
+                android:layout_height="?android:attr/actionBarSize"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="left|center"
+                android:text="My Album"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_19ssp" />
+
+            <ImageView
+                android:id="@+id/iv_all_delete"
+                android:layout_width="?android:attr/actionBarSize"
+                android:layout_height="?android:attr/actionBarSize"
+                android:padding="@dimen/margin_18"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_delete"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_55sdp"
+            android:gravity="center">
+            <!--        android:background="@drawable/bg_shape_album"-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_10sdp"
+                android:padding="@dimen/_1sdp">
+
+                <TextView
+                    android:id="@+id/tvAll"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/album_fav_selector"
+                    android:gravity="center"
+                    android:text="My Album"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14ssp" />
+
+                <TextView
+                    android:id="@+id/tvFav"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/album_fav_selector"
+                    android:gravity="center"
+                    android:text="Favourite"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14ssp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_thumbs"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:scrollbars="vertical"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/lin_no_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_160sdp"
+                android:layout_centerInParent="true"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_no_video_home"
+                android:visibility="visible" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:indeterminateDrawable="@drawable/progress2"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_adplaceholder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/adContainerViewContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <View style="@style/ad_divider" />
+
+        <FrameLayout
+            android:id="@+id/adView"
+            style="@style/ad_layout" />
+    </RelativeLayout>
+
+</RelativeLayout>

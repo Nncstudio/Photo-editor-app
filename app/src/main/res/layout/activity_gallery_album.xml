@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/adContainerViewContainer"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:background="@color/black">
+
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="Choose Photo"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/_18ssp" />
+
+                <ImageView
+                    android:id="@+id/iv_close"
+                    android:layout_width="?android:attr/actionBarSize"
+                    android:layout_height="?android:attr/actionBarSize"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/margin_18"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_cancel" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:id="@+id/simpleFrameLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_adplaceholder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/adContainerViewContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <View style="@style/ad_divider" />
+
+        <FrameLayout
+            android:id="@+id/adView"
+            style="@style/ad_layout" />
+    </RelativeLayout>
+
+
+</RelativeLayout>
